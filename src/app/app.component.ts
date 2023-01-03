@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  pattern: any = '*';
+  pattern: any = '';
+  arr1: any[] = [];
   arr = [
     {
       c1: 1,
@@ -27,6 +28,15 @@ export class AppComponent implements OnInit {
       c4: '',
     },
   ];
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this._pattern();
+  }
   name = 'Angular';
+  _pattern() {
+    for (let i = 0; i < 5; i++) {
+      this.pattern = this.pattern + '   ' + '*';
+      this.arr1.push(this.pattern);
+    }
+    console.log(this.arr1);
+  }
 }
